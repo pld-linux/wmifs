@@ -8,7 +8,7 @@ Group:          X11/Window Managers/Tools
 Group(pl):      X11/Zarz±dcy Okien/Narzêdzia
 URL:		http://windowmaker.mezaway.org/dockapps/%{name}.html
 Source:		ftp://ftp.mezaway.org/pub/DockApps/%{name}-%{version}.tar.gz
-BuildRoot:      /tmp/%{name}-%{version}-root
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define _prefix	/usr/X11R6
 
