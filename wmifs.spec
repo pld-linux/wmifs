@@ -3,13 +3,13 @@ Summary(pl):	wmifs jest dokowalnym apletem monitoruj±cym sieæ
 Name:		wmifs
 Version: 	1.3b1
 Release: 	5
-Copyright: 	GPL
+License: 	GPL
 Group:          X11/Window Managers/Tools
 Group(pl):      X11/Zarz±dcy Okien/Narzêdzia
-URL:		http://windowmaker.mezaway.org/dockapps/%{name}.html
 Source0:	ftp://ftp.mezaway.org/pub/DockApps/%{name}-%{version}.tar.gz
 Source1:	wmifs.desktop
 Patch:		wmifs-makefile.patch
+URL:		http://windowmaker.mezaway.org/dockapps/%{name}.html
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
