@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=wmifs
+Comment=Network Monitor
+Comment[pl]=Monitor Sieci
+Exec=wmifs
+Terminal=0
+Type=Application
