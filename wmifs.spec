@@ -15,6 +15,7 @@ BuildRequires:	xpm-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define 	_prefix		/usr/X11R6
+%define		_applnkdir	%{_datadir}/applnk
 
 %description
 WMiFS is a complete network monitoring dock.app, it's mainly
@@ -55,11 +56,11 @@ make -C %{name}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},/usr/X11R6/share/applnk/DockApplets} 
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_applnkdir}/DockApplets} 
 
 install -s %{name}/%{name} $RPM_BUILD_ROOT%{_bindir}
 install %{name}/sample.wmifsrc $RPM_BUILD_ROOT%{_datadir}/wmifsrc
-install %{SOURCE1} $RPM_BUILD_ROOT/usr/X11R6/share/applnk/DockApplets
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/DockApplets
 
 gzip -9nf BUGS CHANGES HINTS README TODO
 
@@ -72,4 +73,4 @@ rm -rf $RPM_BUILD_ROOT
 %config %{_datadir}/wmifsrc
 %attr(755,root,root) %{_bindir}/%{name}
 
-/usr/X11R6/share/applnk/DockApplets/wmifs.desktop
+%{_applnkdir}/DockApplets/wmifs.desktop
