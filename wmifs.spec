@@ -7,8 +7,6 @@ Version:	1.3b1
 Release:	6
 License:	GPL
 Group:		X11/Window Managers/Tools
-Group(de):	X11/Fenstermanager/Werkzeuge
-Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
 Source0:	ftp://ftp.mezaway.org/pub/DockApps/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch0:		%{name}-makefile.patch
