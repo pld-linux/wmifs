@@ -55,11 +55,11 @@ make -C %{name}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},/etc/X11/applnk/DockApplets} 
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},/usr/X11R6/share/applnk/DockApplets} 
 
 install -s %{name}/%{name} $RPM_BUILD_ROOT%{_bindir}
 install %{name}/sample.wmifsrc $RPM_BUILD_ROOT%{_datadir}/wmifsrc
-install %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/applnk/DockApplets
+install %{SOURCE1} $RPM_BUILD_ROOT/usr/X11R6/share/applnk/DockApplets
 
 gzip -9nf BUGS CHANGES HINTS README TODO
 
@@ -72,4 +72,4 @@ rm -rf $RPM_BUILD_ROOT
 %config %{_datadir}/wmifsrc
 %attr(755,root,root) %{_bindir}/%{name}
 
-/etc/X11/applnk/DockApplets/wmifs.desktop
+/usr/X11R6/share/applnk/DockApplets/wmifs.desktop
