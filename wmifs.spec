@@ -10,6 +10,8 @@ URL:		http://windowmaker.mezaway.org/dockapps/%{name}.html
 Source:		ftp://ftp.mezaway.org/pub/DockApps/%{name}-%{version}.tar.gz
 BuildRoot:      /tmp/%{name}-%{version}-root
 
+%define _prefix         /usr/X11R6
+
 %description
 WMiFS is a complete network monitoring dock.app, it's mainly
 designed for usage in WindowMaker's dock and gives you some
@@ -48,9 +50,10 @@ make -C wmifs
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/X11R6/{bin,share}
-install -s wmifs/wmifs $RPM_BUILD_ROOT/usr/X11R6/bin
-install wmifs/sample.wmifsrc $RPM_BUILD_ROOT/usr/X11R6/share/wmifsrc
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}} 
+
+install -s %{name}/%{name} $RPM_BUILD_ROOT%{_bindir}
+install %{name}/sample.wmifsrc $RPM_BUILD_ROOT%{_datadir}/wmifsrc
 
 gzip -9nf BUGS CHANGES HINTS README TODO
 
@@ -60,8 +63,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {BUGS,CHANGES,HINTS,README,TODO}.gz
-%config /usr/X11R6/share/wmifsrc
-%attr(755,root,root) /usr/X11R6/bin/wmifs
+%config %{_datadir}/wmifsrc
+%attr(755,root,root) %{_bindir}/%{name}
 
 %changelog
 * Sun May 16 1999 Piotr Czerwiñski <pius@pld.org.pl>
