@@ -2,12 +2,16 @@ Summary:	wmifs is a complete network monitoring dock.app
 Summary(pl):	wmifs jest dokowalnym apletem monitoruj±cym sieæ
 Name:		wmifs
 Version: 	1.3b1
-Release: 	4
+Release: 	5
 Copyright: 	GPL
 Group:          X11/Window Managers/Tools
 Group(pl):      X11/Zarz±dcy Okien/Narzêdzia
 URL:		http://windowmaker.mezaway.org/dockapps/%{name}.html
-Source:		ftp://ftp.mezaway.org/pub/DockApps/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.mezaway.org/pub/DockApps/%{name}-%{version}.tar.gz
+Source1:	wmifs.desktop
+Patch:		wmifs-makefile.patch
+BuildPrereq:	XFree86-devel
+BuildPrereq:	xpm-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define _prefix	/usr/X11R6
@@ -50,10 +54,11 @@ make -C %{name}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}} 
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},/etc/X11/applnk/DockApplets} 
 
 install -s %{name}/%{name} $RPM_BUILD_ROOT%{_bindir}
 install %{name}/sample.wmifsrc $RPM_BUILD_ROOT%{_datadir}/wmifsrc
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/applnk/DockApplets
 
 gzip -9nf BUGS CHANGES HINTS README TODO
 
@@ -65,6 +70,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc {BUGS,CHANGES,HINTS,README,TODO}.gz
 %config %{_datadir}/wmifsrc
 %attr(755,root,root) %{_bindir}/%{name}
+
+/etc/X11/applnk/DockApplets/wmifs.desktop
 
 %changelog
 * Sun May 16 1999 Piotr Czerwiñski <pius@pld.org.pl>
