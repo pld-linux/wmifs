@@ -51,7 +51,7 @@ modyfikowaæ przy pomocy pliku ~/.wminetrc.
 %patch -p0
 
 %build
-make -C %{name}
+%{__make} -C %{name}
 
 %install
 rm -rf $RPM_BUILD_ROOT
