@@ -10,7 +10,7 @@ URL:		http://windowmaker.mezaway.org/dockapps/%{name}.html
 Source:		ftp://ftp.mezaway.org/pub/DockApps/%{name}-%{version}.tar.gz
 BuildRoot:      /tmp/%{name}-%{version}-root
 
-%define _prefix         /usr/X11R6
+%define _prefix	/usr/X11R6
 
 %description
 WMiFS is a complete network monitoring dock.app, it's mainly
@@ -46,7 +46,7 @@ modyfikowaæ przy pomocy pliku ~/.wminetrc.
 %setup -q -n %{name}.app
 
 %build
-make -C wmifs
+make -C %{name}
 
 %install
 rm -rf $RPM_BUILD_ROOT
