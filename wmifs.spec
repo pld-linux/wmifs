@@ -48,6 +48,7 @@ modyfikowaæ przy pomocy pliku ~/.wminetrc.
 
 %prep
 %setup -q -n %{name}.app
+%patch -p0
 
 %build
 make -C %{name}
