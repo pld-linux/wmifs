@@ -11,7 +11,6 @@ Source0:	ftp://ftp.mezaway.org/pub/DockApps/%{name}-%{version}.tar.gz
 Source1:	wmifs.desktop
 Patch:		wmifs-makefile.patch
 BuildRequires:	XFree86-devel
-BuildRequires:	xpm-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_prefix		/usr/X11R6
