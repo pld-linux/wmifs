@@ -78,4 +78,4 @@ rm -rf $RPM_BUILD_ROOT
 %config %{_datadir}/wmifsrc
 %attr(755,root,root) %{_bindir}/%{name}
 
-#%{_applnkdir}/DockApplets/wmifs.desktop
+#%%{_applnkdir}/DockApplets/wmifs.desktop
