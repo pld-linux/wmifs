@@ -19,22 +19,21 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 WMiFS is a complete network monitoring dock.app, it's mainly designed
 for usage in WindowMaker's dock and gives you some nice & nifty
 features like:
-
-        - Autosensing of *ALL* active network interfaces;
-        - Integrated autoscaling (per interface) transfer statistics, tested
-          upto 100Mbit;
-        - Displays a 'normal' xload style graph or our new 'waveform' like
-          load graph;
-        - Realtime cycling through active interfaces by simply clicking on the
-          eth0/ppp0 (interface) gadget;
-        - Integrated RX/TX interface activity LEDs;
-        - Integrated interface status LED;
-        - Commandline options to force monitoring a particular interface, even
-          'lo' is supported (-h for help);
-        - User-definable scripts for left/middle/right mouse buttons which are
-          read from ~/.wmifsrc (optional);
-        - Fixed rc file option, usefull for sites where users are not allowed
-          to mess with pppd
+- Autosensing of *ALL* active network interfaces;
+- Integrated autoscaling (per interface) transfer statistics, tested
+  upto 100Mbit;
+- Displays a 'normal' xload style graph or our new 'waveform' like
+  load graph;
+- Realtime cycling through active interfaces by simply clicking on the
+  eth0/ppp0 (interface) gadget;
+- Integrated RX/TX interface activity LEDs;
+- Integrated interface status LED;
+- Commandline options to force monitoring a particular interface, even
+  'lo' is supported (-h for help);
+- User-definable scripts for left/middle/right mouse buttons which are
+  read from ~/.wmifsrc (optional);
+- Fixed rc file option, usefull for sites where users are not allowed
+  to mess with pppd
 
 %description -l es
 Aplicación para el dock del WindowMaker para monitorar las interfaces
