@@ -1,14 +1,14 @@
-Summary: wmifs is a complete network monitoring dock.app
-%define version 1.3b1
-Name: wmifs
-Version: %{version}
-Release: 3
-Copyright: GPL
-Group: X Windows/Window Managers
-URL: http://windowmaker.mezaway.org/dockapps/%{name}.html
-Source: ftp://ftp.mezaway.org/pub/DockApps/%{name}-%{version}.tar.gz
-Packager: Ian Macdonald <ianmacd@xs4all.nl>
-BuildRoot: /var/tmp/%{name}-root
+Summary:	wmifs is a complete network monitoring dock.app
+Summary(pl):	wmifs jest dokowalnym apletem monitoruj±cym sieæ
+Name:		wmifs
+Version: 	1.3b1
+Release: 	4
+Copyright: 	GPL
+Group:          X11/Window Managers/Tools
+Group(pl):      X11/Zarz±dcy Okien/Narzêdzia
+URL:		http://windowmaker.mezaway.org/dockapps/%{name}.html
+Source:		ftp://ftp.mezaway.org/pub/DockApps/%{name}-%{version}.tar.gz
+BuildRoot:      /tmp/%{name}-%{version}-root
 
 %description
 WMiFS is a complete network monitoring dock.app, it's mainly
@@ -31,28 +31,43 @@ nice & nifty features like:
         * Fixed rc file option, usefull for sites where users
           are not allowed to mess with pppd
 
+%description -l pl
+WMiFS jest programem monitoruj±cym sieæ, przeznaczonym g³ównie 
+dla Doku WindowMakera. Zawiera m.in. mo¿liwo¶æ automatycznego
+wykrywania i monitorowania wszystkich aktywnych interfejsów 
+sieciowych, statystyki transferów, mo¿liwo¶æ przekazywania opcji
+do programu z linii poleceñ, mo¿liwo¶æ przypisania w³asnych poleceñ
+odpowiednim klawiszom myszy oraz wiele innych funkcji, które mo¿na
+modyfikowaæ przy pomocy pliku ~/.wminetrc.
+
 %prep
-%setup -n %{name}.app
+%setup -q -n %{name}.app
 
 %build
-make -C %{name}
+make -C wmifs
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/{etc,usr/X11R6/bin}
-install -s -m 755 %{name}/%{name} $RPM_BUILD_ROOT/usr/X11R6/bin
-install -m 644 %{name}/sample.%{name}rc $RPM_BUILD_ROOT/etc/%{name}rc
+install -d $RPM_BUILD_ROOT/usr/X11R6/{bin,share}
+install -s wmifs/wmifs $RPM_BUILD_ROOT/usr/X11R6/bin
+install wmifs/sample.wmifsrc $RPM_BUILD_ROOT/usr/X11R6/share/wmifsrc
 
-%files
-%defattr(-,root,root)
-%config /etc/%{name}rc
-/usr/X11R6/bin/%{name}
-%doc BUGS CHANGES COPYING HINTS INSTALL README TODO
+gzip -9nf BUGS CHANGES HINTS README TODO
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%changelog
-* Tue Feb 9 1998 Ian Macdonald <ianmacd@xs4all.nl>
+%files
+%defattr(644,root,root,755)
+%doc {BUGS,CHANGES,HINTS,README,TODO}.gz
+%config /usr/X11R6/share/wmifsrc
+%attr(755,root,root) /usr/X11R6/bin/wmifs
 
-- first RPM release
+%changelog
+* Sun May 16 1999 Piotr Czerwiñski <pius@pld.org.pl>
+  [1.3b1-4]
+- cleaned up a bit spec file for PLD use,
+- package is FHS 2.0 compliant.
+
+* Tue Feb 9 1998 Ian Macdonald <ianmacd@xs4all.nl>
+- first RPM release.
