@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=wmifs
+Name=wmIfs
 Comment=Network Monitor
 Comment[pl]=Monitor Sieci
 Exec=wmifs
