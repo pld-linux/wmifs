@@ -12,10 +12,9 @@ Source1:	wmifs.desktop
 Patch:		wmifs-makefile.patch
 BuildRequires:	XFree86-devel
 BuildRequires:	xpm-devel
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_prefix		/usr/X11R6
-%define		_applnkdir	%{_datadir}/applnk
 
 %description
 WMiFS is a complete network monitoring dock.app, it's mainly
