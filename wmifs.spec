@@ -14,7 +14,6 @@ URL:		http://windowmaker.mezaway.org/dockapps/wmifs.html
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define 	_prefix		/usr/X11R6
 
 %description
 WMiFS is a complete network monitoring dock.app, it's mainly designed
