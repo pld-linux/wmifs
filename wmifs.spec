@@ -8,6 +8,7 @@ Release:	6
 License:	GPL
 Group:		X11/Window Managers/Tools
 Source0:	ftp://ftp.mezaway.org/pub/DockApps/%{name}-%{version}.tar.gz
+# Source0-md5:	4a6ec0141792debac2803e0697fa1dd6
 Source1:	%{name}.desktop
 Patch0:		%{name}-makefile.patch
 URL:		http://windowmaker.mezaway.org/dockapps/wmifs.html
