@@ -56,7 +56,7 @@ modyfikowaæ przy pomocy pliku ~/.wminetrc.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_applnkdir}/DockApplets} 
 
-install -s %{name}/%{name} $RPM_BUILD_ROOT%{_bindir}
+install %{name}/%{name} $RPM_BUILD_ROOT%{_bindir}
 install %{name}/sample.wmifsrc $RPM_BUILD_ROOT%{_datadir}/wmifsrc
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/DockApplets
 
