@@ -73,12 +73,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/%{name}
 
 /etc/X11/applnk/DockApplets/wmifs.desktop
-
-%changelog
-* Sun May 16 1999 Piotr Czerwiñski <pius@pld.org.pl>
-  [1.3b1-4]
-- cleaned up a bit spec file for PLD use,
-- package is FHS 2.0 compliant.
-
-* Tue Feb 9 1998 Ian Macdonald <ianmacd@xs4all.nl>
-- first RPM release.
