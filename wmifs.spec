@@ -4,7 +4,7 @@ Summary(pl):	wmifs jest dokowalnym apletem monitoruj±cym sieæ
 Summary(pt_BR):	Uma aplicação dock para a monitoração de rede
 Name:		wmifs
 Version:	1.3b1
-Release:	6
+Release:	7
 License:	GPL
 Group:		X11/Window Managers/Tools
 Source0:	ftp://ftp.mezaway.org/pub/DockApps/%{name}-%{version}.tar.gz
@@ -14,7 +14,6 @@ Patch0:		%{name}-makefile.patch
 URL:		http://windowmaker.mezaway.org/dockapps/wmifs.html
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 WMiFS is a complete network monitoring dock.app, it's mainly designed
@@ -63,12 +62,12 @@ de rede.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_applnkdir}/DockApplets}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}}
+install -d $RPM_BUILD_ROOT{%{_desktopdir}/docklets,%{_sysconfdir}}
 
 install %{name}/%{name} $RPM_BUILD_ROOT%{_bindir}
-install %{name}/sample.wmifsrc $RPM_BUILD_ROOT%{_datadir}/wmifsrc
-#install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/DockApplets
-
+install %{name}/sample.wmifsrc $RPM_BUILD_ROOT%{_sysconfdir}/wmifsrc
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/docklets
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -76,7 +75,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc BUGS CHANGES HINTS README TODO
-%config %{_datadir}/wmifsrc
 %attr(755,root,root) %{_bindir}/%{name}
-
-#%%{_applnkdir}/DockApplets/wmifs.desktop
+%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/wmifsrc
+%{_desktopdir}/docklets/wmifs.desktop
