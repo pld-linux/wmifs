@@ -4,7 +4,7 @@ Summary(pl):	wmifs jest dokowalnym apletem monitoruj±cym sieæ
 Summary(pt_BR):	Uma aplicação dock para a monitoração de rede
 Name:		wmifs
 Version:	1.3b1
-Release:	7
+Release:	8
 License:	GPL
 Group:		X11/Window Managers/Tools
 Source0:	ftp://ftp.mezaway.org/pub/DockApps/%{name}-%{version}.tar.gz
@@ -58,7 +58,9 @@ de rede.
 %patch -p0
 
 %build
-%{__make} -C %{name}
+%{__make} -C %{name} \
+	CFLAGS="%{rpmcflags} -Wall" \
+	LIBDIR="-L/usr/X11R6/%{_lib}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
