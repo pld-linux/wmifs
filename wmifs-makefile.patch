@@ -1,0 +1,19 @@
+--- wmifs/Makefile~	Thu May 14 00:00:59 1998
++++ wmifs/Makefile	Thu Jul  8 03:58:56 1999
+@@ -1,5 +1,7 @@
+ LIBDIR = -L/usr/X11R6/lib
+ LIBS   = -lXpm -lXext -lX11
++INCDIR = -I/usr/X11R6/include
++CFLAGS = -O2 -Wall
+ OBJS =	wmifs.o \
+ 		../wmgeneral/wmgeneral.o \
+ 		../wmgeneral/misc.o \
+@@ -7,7 +9,7 @@
+ 
+ 
+ .c.o:
+-	cc -c -O2 -Wall $< -o $*.o
++	cc -c $(CFLAGS) $(INCDIR) $< -o $*.o
+ 
+ wmifs: $(OBJS)
+ 	cc -o wmifs $^ -lXext $(LIBDIR) $(LIBS)
