@@ -10,8 +10,8 @@ URL:		http://windowmaker.mezaway.org/dockapps/%{name}.html
 Source0:	ftp://ftp.mezaway.org/pub/DockApps/%{name}-%{version}.tar.gz
 Source1:	wmifs.desktop
 Patch:		wmifs-makefile.patch
-BuildPrereq:	XFree86-devel
-BuildPrereq:	xpm-devel
+BuildRequires:	XFree86-devel
+BuildRequires:	xpm-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define _prefix	/usr/X11R6
