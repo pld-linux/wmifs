@@ -54,7 +54,7 @@ de rede.
 
 %prep
 %setup -q -n %{name}.app
-%patch -p0
+%patch0 -p0
 
 %build
 %{__make} -C %{name} \
