@@ -1,7 +1,7 @@
 Summary:	wmifs is a complete network monitoring dock.app
-Summary(es):	Aplicación para el dock del WindowMaker para monitorar la red
-Summary(pl):	wmifs jest dokowalnym apletem monitoruj±cym sieæ
-Summary(pt_BR):	Uma aplicação dock para a monitoração de rede
+Summary(es.UTF-8):   AplicaciÃ³n para el dock del WindowMaker para monitorar la red
+Summary(pl.UTF-8):   wmifs jest dokowalnym apletem monitorujÄ…cym sieÄ‡
+Summary(pt_BR.UTF-8):   Uma aplicaÃ§Ã£o dock para a monitoraÃ§Ã£o de rede
 Name:		wmifs
 Version:	1.3b1
 Release:	8
@@ -35,21 +35,21 @@ features like:
 - Fixed rc file option, usefull for sites where users are not allowed
   to mess with pppd
 
-%description -l es
-Aplicación para el dock del WindowMaker para monitorar las interfaces
+%description -l es.UTF-8
+AplicaciÃ³n para el dock del WindowMaker para monitorar las interfaces
 de red.
 
-%description -l pl
-WMiFS jest programem monitoruj±cym sieæ, przeznaczonym g³ównie dla
-Doku WindowMakera. Zawiera m.in. mo¿liwo¶æ automatycznego wykrywania i
-monitorowania wszystkich aktywnych interfejsów sieciowych, statystyki
-transferów, mo¿liwo¶æ przekazywania opcji do programu z linii poleceñ,
-mo¿liwo¶æ przypisania w³asnych poleceñ odpowiednim klawiszom myszy
-oraz wiele innych funkcji, które mo¿na modyfikowaæ przy pomocy pliku
+%description -l pl.UTF-8
+WMiFS jest programem monitorujÄ…cym sieÄ‡, przeznaczonym gÅ‚Ã³wnie dla
+Doku WindowMakera. Zawiera m.in. moÅ¼liwoÅ›Ä‡ automatycznego wykrywania i
+monitorowania wszystkich aktywnych interfejsÃ³w sieciowych, statystyki
+transferÃ³w, moÅ¼liwoÅ›Ä‡ przekazywania opcji do programu z linii poleceÅ„,
+moÅ¼liwoÅ›Ä‡ przypisania wÅ‚asnych poleceÅ„ odpowiednim klawiszom myszy
+oraz wiele innych funkcji, ktÃ³re moÅ¼na modyfikowaÄ‡ przy pomocy pliku
 ~/.wminetrc.
 
-%description -l pt_BR
-O wmifs é um aplicativo dock para monitorar vários tipos de interfaces
+%description -l pt_BR.UTF-8
+O wmifs Ã© um aplicativo dock para monitorar vÃ¡rios tipos de interfaces
 de rede.
 
 %prep
