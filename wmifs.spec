@@ -1,7 +1,7 @@
 Summary:	wmifs is a complete network monitoring dock.app
-Summary(es.UTF-8):   Aplicación para el dock del WindowMaker para monitorar la red
-Summary(pl.UTF-8):   wmifs jest dokowalnym apletem monitorującym sieć
-Summary(pt_BR.UTF-8):   Uma aplicação dock para a monitoração de rede
+Summary(es.UTF-8):	Aplicación para el dock del WindowMaker para monitorar la red
+Summary(pl.UTF-8):	wmifs jest dokowalnym apletem monitorującym sieć
+Summary(pt_BR.UTF-8):	Uma aplicação dock para a monitoração de rede
 Name:		wmifs
 Version:	1.3b1
 Release:	8
